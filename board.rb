@@ -1,4 +1,4 @@
-class GameBoard
+class Game
 
 	def initialize
 		blank = "\u0020" * 3
@@ -33,7 +33,6 @@ class GameBoard
 		@board.each do |line|
 			puts line.join + "\n"
 		end
-		return nil
 	end
 
 end
