@@ -4,14 +4,6 @@ def random_choice
 	choicey = rand(3)
 	{ :x => choicex, :y => choicey, :what => choice}
 end
+load './tic_tac_toe.rb'
+test = Game.new
 
-system "clear"
-load './board.rb'
-test = Board.new
-test.draw
-
-puts "Continue?"
-gets.chomp
-
-test.update(:MM, "x")
-test.draw

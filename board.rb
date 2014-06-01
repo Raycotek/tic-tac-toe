@@ -1,11 +1,11 @@
 class Board
 
 	attr_reader :board
-	require './graphics.rb'
+	require_relative 'graphics.rb'
 	include Graphics
 
 	def initialize
-		@board = Hash.new ( " " )
+		@board = Hash.new ( " ".to_sym )
 	end
 
 	def update(square, symbol)
