@@ -7,18 +7,11 @@ end
 
 system "clear"
 load './board.rb'
-test = Game.new
+test = Board.new
 test.draw
 
-again = true
+puts "Continue?"
+gets.chomp
 
-while again do
-	turn = random_choice
-
-	test.update(turn[:x], turn[:y], turn[:what])
-	test.draw
-
-	puts "Again?"
-	again = false unless gets.chomp == "y"
-end
-
+test.update(:MM, "x")
+test.draw
