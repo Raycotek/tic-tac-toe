@@ -1,8 +1,8 @@
 class Game
 	require_relative 'board.rb'
 	require_relative 'player.rb'
-	# require Board
-	# require Player
+	require_relative 'mechanics.rb'
+	include Mechanics
 
 	def setup
 		@xplayer = Player.new
@@ -17,26 +17,15 @@ class Game
 		@oplayer.name = "Marj"
 		@oplayer.symbol = :o
 
+		@player_array = [@xplayer, @oplayer]
+
 		# puts [@xplayer.name, @xplayer.symbol, @oplayer.name, @oplayer.symbol]
-	end
-
-	def game_over?
-
-	end
-
-	def turn(player)
-		@gameboard.draw
-		puts "Game time!! #{player.name} goes first!"
-		puts "Enter square to place an #{player.symbol}:"
-		choice = gets.chomp.upcase.to_sym
-		@gameboard.update(choice, player.symbol)
-		@gameboard.draw
 	end
 
 	def initialize
 		self.setup
 		@gameboard = Board.new
-		self.turn([@xplayer, @oplayer].sample)
+		self.turn([0,1].sample)
 	end
 
 end
