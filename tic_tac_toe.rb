@@ -18,14 +18,14 @@ class Game
 		@oplayer.symbol = :o
 
 		@player_array = [@xplayer, @oplayer]
-
-		# puts [@xplayer.name, @xplayer.symbol, @oplayer.name, @oplayer.symbol]
 	end
 
 	def initialize
+		@game = Board.new
+		@game.draw
+		puts "Welcome to Tic-Tac-Toe!"
 		self.setup
-		@gameboard = Board.new
-		self.turn([0,1].sample)
+		self.turn(rand(2))
 	end
 
 end

@@ -1,23 +1,23 @@
 module Graphics
 
-	@@hline = "\u2500"
-	@@vline = "\u2502"
-	@@cross = "\u253C"
-	@@spacer = " " * 15
+	HLINE = "\u2500"
+	VLINE = "\u2502"
+	CROSS = "\u253C"
+	SPACER = " " * 15
 		
 	def set_table(object)
 		[
-			[object[:TL], @@vline, object[:TM], @@vline, object[:TR]],
-			[@@hline, @@cross, @@hline, @@cross, @@hline],
-			[object[:ML], @@vline, object[:MM], @@vline, object[:MR]],
-			[@@hline, @@cross, @@hline, @@cross, @@hline],
-			[object[:BL], @@vline, object[:BM], @@vline, object[:BR]]
+			[object[:TL], VLINE, object[:TM], VLINE, object[:TR]],
+			[HLINE, CROSS, HLINE, CROSS, HLINE],
+			[object[:ML], VLINE, object[:MM], VLINE, object[:MR]],
+			[HLINE, CROSS, HLINE, CROSS, HLINE],
+			[object[:BL], VLINE, object[:BM], VLINE, object[:BR]]
 		]
 	end
 
 	def draw_row(line)
-		puts @@spacer + " " + line.join(" ").upcase + "\n" if line[0].class == Symbol
-		puts @@spacer + @@hline + line.join(@@hline) + @@hline + "\n" if line[0] == @@hline
+		puts SPACER + " " + line.join(" ").upcase + "\n" if line[0].class == Symbol
+		puts SPACER + HLINE + line.join(HLINE) + HLINE + "\n" if line[0] == HLINE
 	end
 
 	def display(object)
