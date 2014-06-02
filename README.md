@@ -6,17 +6,12 @@ As per [The Odin Project](http://www.theodinproject.com/ruby-programming/oop)
 
 A two-player game of Tic-Tac-Toe, played through the command line.
 
-Start game
-- get player names, X or O 
-- draw empty board
+The game first asks for the two players' names. Play then starts, with players taking turns to enter a square on the grid to place their symbol (X or O).
 
-Turn
-- Player makes move
-- redraw board
-- set next player's turn 
+Players select a square using one of the following two-letter combinations:
 
-Check for Game Over
-- if no, back to Turn
-- if draw, declare draw
-- if victory, declare victory
-- ask to play again?
+- TL, TM or TR -- Top row, Left, Middle or Right square
+- ML, MM or MR -- Middle row
+- BL, BM or BR -- Bottom row
+
+Play is over when a player completes a 3-square line of his/her symbol in any direction (victory), or when all squares are filled and no player has made a 3-square line (draw).
