@@ -7,14 +7,12 @@ class Game
 	def setup
 		@xplayer = Player.new
 		puts "Enter name for X player:"
-		# @xplayer.name = gets.chomp.capitalize
-		@xplayer.name = "Alan"
+		@xplayer.name = gets.chomp.capitalize
 		@xplayer.symbol = :x 
 		
 		@oplayer = Player.new
 		puts "Enter name for O player:"
-		# @oplayer.name = gets.chomp.capitalize
-		@oplayer.name = "Marj"
+		@oplayer.name = gets.chomp.capitalize
 		@oplayer.symbol = :o
 
 		@player_array = [@xplayer, @oplayer]
